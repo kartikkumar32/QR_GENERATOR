@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Custom QR Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Custom QR Code Generator</h2>
+
+        <form action="/generate" method="POST" enctype="multipart/form-data">
+
+            <input type="text" name="data" placeholder="Enter URL or Text" required>
+
+            <label>QR Color</label>
+            <input type="color" name="fill_color" value="#000000">
+
+            <label>Background Color</label>
+            <input type="color" name="back_color" value="#ffffff">
+
+            <label>QR Size</label>
+            <select name="size">
+                <option value="8">Small</option>
+                <option value="10">Medium</option>
+                <option value="12">Large</option>
+            </select>
+
+            <label>Upload Logo</label>
+            <input type="file" name="logo">
+
+            <button type="submit">Generate QR</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
